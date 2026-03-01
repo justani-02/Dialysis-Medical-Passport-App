@@ -12,6 +12,7 @@
 ## 💡 Inspiration
 Our inspiration came from a teammate’s experience in a nephrology clinic, observing the immense difficulty travel poses for people on chronic dialysis. Even short trips demand weeks of coordination and anxiety due to fragmented, slow, and paper-dependent medical sharing. We realized that "data logistics" shouldn't be a barrier to a normal life.
 
+
 ## 📋 What it does
 Medical Passport stores a concise, hospital-verified summary of a patient’s essential dialysis information. 
 - **For Patients:** A digital card and QR code for easy, offline-ready travel.
@@ -71,12 +72,6 @@ To ensure this passport is "clinical-grade," we focused on three technical pilla
 * **Backend:** Python (FastAPI), Supabase
 * **Standards:** FHIR (Fast Healthcare Interoperability Resources), HL7
 * **Security:** HMAC-SHA256 Cryptographic Hashing
-
-## 🚀 What's Next
-
-* **Clinical Pilot:** Validating the data set with active dialysis nurses and nephrologists.
-* **EHR Integration:** Building direct connectors for major systems like Epic and Cerner.
-* **Emergency Access:** Features for first responders to access critical allergy/access data in an emergency.
 
 ---
 
