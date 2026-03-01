@@ -46,6 +46,37 @@ graph TD
 
 ```
 
+
+## 🧬 Data Model: FHIR Implementation
+
+To ensure global interoperability, we use the **HL7 FHIR** standard. Below is the JSON schema used for the Dialysis Prescription ($Q_b$ and $Q_d$ targets).
+
+```json
+{
+  "resourceType": "ServiceRequest",
+  "id": "dialysis-prescription-001",
+  "status": "active",
+  "intent": "order",
+  "category": [{
+    "coding": [{
+      "system": "[http://snomed.info/sct](http://snomed.info/sct)", "code": "233513008", "display": "Hemodialysis"
+    }]
+  }],
+  "extension": [
+    {
+      "url": "[http://example.org/fhir/StructureDefinition/blood-flow-rate](http://example.org/fhir/StructureDefinition/blood-flow-rate)",
+      "valueQuantity": { "value": 400, "unit": "mL/min", "code": "mL/min" }
+    },
+    {
+      "url": "[http://example.org/fhir/StructureDefinition/dialysate-flow-rate](http://example.org/fhir/StructureDefinition/dialysate-flow-rate)",
+      "valueQuantity": { "value": 500, "unit": "mL/min", "code": "mL/min" }
+    }
+  ],
+  "supportingInfo": [{ "display": "HMAC-SHA256-SIGNATURE: 8f32b7c..." }]
+}
+
+```
+
 ## 🛡️ Technical Specifications
 
 To ensure this passport is "clinical-grade," we focused on three technical pillars:
@@ -75,4 +106,4 @@ To ensure this passport is "clinical-grade," we focused on three technical pilla
 
 ---
 
-© 2026 Medical Passport Team | Restoring Freedom to the Dialysis Community.
+© 2026 Medical Passport Team | Ananya Chandraker & Shivam Soni
