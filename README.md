@@ -42,3 +42,42 @@ graph TD
     G -- Yes --> H[Safe Dialysis Setup]
     G -- No --> I[Tamper Alert]
     end
+
+```
+
+## 🛡️ Technical Specifications
+
+To ensure this passport is "clinical-grade," we focused on three technical pillars:
+
+* **Data Integrity (HMAC-SHA256):** Every prescription is signed with a secret key. If a value (like Blood Flow Rate $Q_b$) is modified by even one digit, the hash verification fails instantly.
+* **Interoperability (FHIR/HL7):** Data is structured using JSON-based FHIR resources (ServiceRequest/Observation) to ensure it can be read by modern hospital EHRs globally.
+* **Safety Guardrails:** The system includes a logic layer that flags prescriptions falling outside KDOQI safety guidelines (e.g., ensuring needle gauge matches the $Q_b$ flow rate).
+
+## 🚧 Challenges we ran into
+
+* **Clinical Realism:** Balancing complex medical regulations with a fast-paced development cycle. We had to ensure we didn't oversimplify safety for the sake of the UI.
+* **Data Sovereignty:** Designing a model where patients own their data while ensuring it remains "Clinician-Trusted" and unalterable.
+* **Cross-Border Standards:** Navigating the lack of a universal standard for dialysis-specific data fields across different healthcare jurisdictions.
+
+## 🏆 Accomplishments that we're proud of
+
+* **Empathetic Tech:** Turning a complex clinical workflow into a simple, user-friendly mobile experience.
+* **Zero-Knowledge Potential:** Creating a system where a clinic can verify data without needing a direct, live connection back to the originating hospital's database.
+
+## ⚙️ Built With
+
+* **Design:** Figma
+* **Frontend:** React, TypeScript
+* **Backend:** Python (FastAPI), Supabase
+* **Standards:** FHIR (Fast Healthcare Interoperability Resources), HL7
+* **Security:** HMAC-SHA256 Cryptographic Hashing
+
+## 🚀 What's Next
+
+* **Clinical Pilot:** Validating the data set with active dialysis nurses and nephrologists.
+* **EHR Integration:** Building direct connectors for major systems like Epic and Cerner.
+* **Emergency Access:** Features for first responders to access critical allergy/access data in an emergency.
+
+---
+
+© 2026 Medical Passport Team | Restoring Freedom to the Dialysis Community.
